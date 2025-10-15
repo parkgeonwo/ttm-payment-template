@@ -26,7 +26,7 @@ const plans: PricingPlan[] = [
     price: 29,
     period: '월',
     description: '개인 사용자를 위한 기본 플랜',
-    productId: 'prod_4iKsB2SLIrrHifPmoab3W4',
+    productId: 'prod_I7xYQ9oWZgFvpAErD4C1E',
     features: [
       '기본 기능 사용',
       '월 100건 처리',
@@ -98,6 +98,7 @@ export default function PricingPlans({ onSelectPlan }: PricingPlansProps) {
           userId: user.id,
           email: user.email || '',
           successUrl: `${window.location.origin}/dashboard?success=true`,
+          cancelUrl: `${window.location.origin}?canceled=true`,
           metadata: {
             plan: `${plan.name} ${plan.period}`,
           },
