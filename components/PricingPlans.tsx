@@ -19,14 +19,15 @@ interface PricingPlansProps {
   onSelectPlan?: (planId: string) => void
 }
 
+// TODO: Replace productId values with your actual Creem Product IDs from Creem Dashboard
 const plans: PricingPlan[] = [
   {
     id: 'basic',
     name: 'Basic',
-    price: 29,
+    price: 5,
     period: '월',
     description: '개인 사용자를 위한 기본 플랜',
-    productId: 'prod_I7xYQ9oWZgFvpAErD4C1E',
+    productId: 'prod_I7xYQ9oWZgFvpAErD4C1E', // Replace with actual Creem Product ID
     features: [
       '기본 기능 사용',
       '월 100건 처리',
@@ -40,7 +41,7 @@ const plans: PricingPlan[] = [
     price: 39,
     period: '월',
     description: '전문가를 위한 추천 플랜',
-    productId: 'prod_pro_monthly',
+    productId: 'prod_YOUR_PRO_PRODUCT_ID', // Replace with actual Creem Product ID
     features: [
       '모든 기본 기능',
       '월 1,000건 처리',

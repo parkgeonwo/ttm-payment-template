@@ -1,6 +1,6 @@
 {
-  "name": "payment-test",
-  "version": "0.1.0",
+  "name": "nextjs-supabase-creem-template",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
