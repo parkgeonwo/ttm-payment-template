@@ -15,10 +15,6 @@ interface PricingPlan {
   productId?: string
 }
 
-interface PricingPlansProps {
-  onSelectPlan?: (planId: string) => void
-}
-
 // TODO: Replace productId values with your actual Creem Product IDs from Creem Dashboard
 const plans: PricingPlan[] = [
   {
@@ -70,7 +66,7 @@ const plans: PricingPlan[] = [
   },
 ]
 
-export default function PricingPlans({ onSelectPlan }: PricingPlansProps) {
+export default function PricingPlans() {
   const { mutate: createCheckout, isPending } = useCreemCheckout()
 
   const handleSelectPlan = async (plan: PricingPlan) => {

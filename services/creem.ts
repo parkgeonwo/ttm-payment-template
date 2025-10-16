@@ -60,7 +60,7 @@ export async function createCheckout(
     try {
       const errorJson = JSON.parse(errorText)
       errorMessage = errorJson.message || errorJson.error || errorMessage
-    } catch (e) {
+    } catch {
       errorMessage = errorText || errorMessage
     }
 

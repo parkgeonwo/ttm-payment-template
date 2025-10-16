@@ -1,5 +1,4 @@
 import { HTMLAttributes, forwardRef } from 'react'
-import { theme } from '@/lib/theme'
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   padding?: 'none' | 'sm' | 'md' | 'lg'
