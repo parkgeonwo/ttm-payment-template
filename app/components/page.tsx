@@ -33,14 +33,14 @@ export default function ComponentsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#fafafa] py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#08090a] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-[#18181b] mb-3">
+          <h1 className="text-4xl font-bold text-[#f7f8f8] mb-3 tracking-[-0.022em]">
             Component Library
           </h1>
-          <p className="text-lg text-[#71717a]">
+          <p className="text-[15px] text-[#8a8f98]">
             Linear Design System 기반의 재사용 가능한 UI 컴포넌트 모음
           </p>
         </div>
@@ -48,7 +48,7 @@ export default function ComponentsPage() {
         <div className="space-y-12">
           {/* Buttons Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-[#18181b] mb-6">
+            <h2 className="text-2xl font-semibold text-[#f7f8f8] mb-6 tracking-[-0.022em]">
               Buttons
             </h2>
             <Card>
@@ -56,7 +56,7 @@ export default function ComponentsPage() {
                 <div className="space-y-8">
                   {/* Variants */}
                   <div>
-                    <h3 className="text-sm font-medium text-[#71717a] mb-4">
+                    <h3 className="text-[13px] font-medium text-[#d0d6e0] mb-4">
                       Variants
                     </h3>
                     <div className="flex flex-wrap gap-3">
@@ -69,7 +69,7 @@ export default function ComponentsPage() {
 
                   {/* Sizes */}
                   <div>
-                    <h3 className="text-sm font-medium text-[#71717a] mb-4">
+                    <h3 className="text-[13px] font-medium text-[#d0d6e0] mb-4">
                       Sizes
                     </h3>
                     <div className="flex flex-wrap items-center gap-3">
@@ -81,7 +81,7 @@ export default function ComponentsPage() {
 
                   {/* States */}
                   <div>
-                    <h3 className="text-sm font-medium text-[#71717a] mb-4">
+                    <h3 className="text-[13px] font-medium text-[#d0d6e0] mb-4">
                       States
                     </h3>
                     <div className="flex flex-wrap gap-3">
@@ -95,7 +95,7 @@ export default function ComponentsPage() {
 
                   {/* With Icons */}
                   <div>
-                    <h3 className="text-sm font-medium text-[#71717a] mb-4">
+                    <h3 className="text-[13px] font-medium text-[#d0d6e0] mb-4">
                       With Icons
                     </h3>
                     <div className="flex flex-wrap gap-3">
@@ -144,7 +144,7 @@ export default function ComponentsPage() {
 
                   {/* Full Width */}
                   <div>
-                    <h3 className="text-sm font-medium text-[#71717a] mb-4">
+                    <h3 className="text-[13px] font-medium text-[#d0d6e0] mb-4">
                       Full Width
                     </h3>
                     <Button fullWidth>Full Width Button</Button>
@@ -156,7 +156,7 @@ export default function ComponentsPage() {
 
           {/* Inputs Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-[#18181b] mb-6">
+            <h2 className="text-2xl font-semibold text-[#f7f8f8] mb-6 tracking-[-0.022em]">
               Inputs
             </h2>
             <Card>
@@ -226,7 +226,7 @@ export default function ComponentsPage() {
 
           {/* Cards Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-[#18181b] mb-6">
+            <h2 className="text-2xl font-semibold text-[#f7f8f8] mb-6 tracking-[-0.022em]">
               Cards
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -238,7 +238,7 @@ export default function ComponentsPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-[#71717a]">
+                  <p className="text-[13px] text-[#8a8f98]">
                     This is the card content area where you can place any
                     content.
                   </p>
@@ -253,8 +253,8 @@ export default function ComponentsPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-[#71717a]">
-                    This card has a hover effect with shadow and transform.
+                  <p className="text-[13px] text-[#8a8f98]">
+                    This card has a hover effect with border highlight and transform.
                   </p>
                 </CardContent>
               </Card>
@@ -267,7 +267,7 @@ export default function ComponentsPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-[#71717a]">Main content here.</p>
+                  <p className="text-[13px] text-[#8a8f98]">Main content here.</p>
                 </CardContent>
                 <CardFooter>
                   <Button size="sm" fullWidth>
@@ -280,14 +280,14 @@ export default function ComponentsPage() {
 
           {/* Badges Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-[#18181b] mb-6">
+            <h2 className="text-2xl font-semibold text-[#f7f8f8] mb-6 tracking-[-0.022em]">
               Badges
             </h2>
             <Card>
               <CardContent>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-sm font-medium text-[#71717a] mb-4">
+                    <h3 className="text-[13px] font-medium text-[#d0d6e0] mb-4">
                       Variants
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -301,7 +301,7 @@ export default function ComponentsPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-medium text-[#71717a] mb-4">
+                    <h3 className="text-[13px] font-medium text-[#d0d6e0] mb-4">
                       Sizes
                     </h3>
                     <div className="flex flex-wrap items-center gap-2">
@@ -312,7 +312,7 @@ export default function ComponentsPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-medium text-[#71717a] mb-4">
+                    <h3 className="text-[13px] font-medium text-[#d0d6e0] mb-4">
                       With Dot
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -334,7 +334,7 @@ export default function ComponentsPage() {
 
           {/* Select Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-[#18181b] mb-6">
+            <h2 className="text-2xl font-semibold text-[#f7f8f8] mb-6 tracking-[-0.022em]">
               Select
             </h2>
             <Card>
@@ -376,7 +376,7 @@ export default function ComponentsPage() {
 
           {/* Textarea Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-[#18181b] mb-6">
+            <h2 className="text-2xl font-semibold text-[#f7f8f8] mb-6 tracking-[-0.022em]">
               Textarea
             </h2>
             <Card>
@@ -418,76 +418,60 @@ export default function ComponentsPage() {
 
           {/* Color Palette Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-[#18181b] mb-6">
+            <h2 className="text-2xl font-semibold text-[#f7f8f8] mb-6 tracking-[-0.022em]">
               Color Palette
             </h2>
             <Card>
               <CardContent>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-sm font-medium text-[#71717a] mb-3">
-                      Primary Colors
+                    <h3 className="text-[13px] font-medium text-[#d0d6e0] mb-3">
+                      Brand Colors
                     </h3>
                     <div className="grid grid-cols-5 gap-2">
                       <div className="space-y-1">
-                        <div className="h-16 rounded bg-[#f0f3ff] border border-[#e5e5e5]" />
-                        <p className="text-xs text-center text-[#71717a]">50</p>
+                        <div className="h-16 rounded bg-[#5e6ad2] border border-[#23252a]" />
+                        <p className="text-[11px] text-center text-[#8a8f98]">Brand</p>
                       </div>
                       <div className="space-y-1">
-                        <div className="h-16 rounded bg-[#e0e7ff] border border-[#e5e5e5]" />
-                        <p className="text-xs text-center text-[#71717a]">
-                          100
-                        </p>
+                        <div className="h-16 rounded bg-[#7170ff] border border-[#23252a]" />
+                        <p className="text-[11px] text-center text-[#8a8f98]">Accent</p>
                       </div>
                       <div className="space-y-1">
-                        <div className="h-16 rounded bg-[#c7d2fe]" />
-                        <p className="text-xs text-center text-[#71717a]">
-                          200
-                        </p>
+                        <div className="h-16 rounded bg-[#828fff]" />
+                        <p className="text-[11px] text-center text-[#8a8f98]">Link</p>
                       </div>
                       <div className="space-y-1">
-                        <div className="h-16 rounded bg-[#5b21b6]" />
-                        <p className="text-xs text-center text-[#71717a]">
-                          500
-                        </p>
+                        <div className="h-16 rounded bg-[#08090a] border border-[#23252a]" />
+                        <p className="text-[11px] text-center text-[#8a8f98]">Background</p>
                       </div>
                       <div className="space-y-1">
-                        <div className="h-16 rounded bg-[#312e81]" />
-                        <p className="text-xs text-center text-[#71717a]">
-                          900
-                        </p>
+                        <div className="h-16 rounded bg-[#141516] border border-[#23252a]" />
+                        <p className="text-[11px] text-center text-[#8a8f98]">Surface</p>
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-medium text-[#71717a] mb-3">
-                      Status Colors
+                    <h3 className="text-[13px] font-medium text-[#d0d6e0] mb-3">
+                      Semantic Colors
                     </h3>
                     <div className="grid grid-cols-4 gap-2">
                       <div className="space-y-1">
-                        <div className="h-16 rounded bg-[#22c55e]" />
-                        <p className="text-xs text-center text-[#71717a]">
-                          Success
-                        </p>
+                        <div className="h-16 rounded bg-[#4cb782]" />
+                        <p className="text-[11px] text-center text-[#8a8f98]">Success</p>
                       </div>
                       <div className="space-y-1">
-                        <div className="h-16 rounded bg-[#f59e0b]" />
-                        <p className="text-xs text-center text-[#71717a]">
-                          Warning
-                        </p>
+                        <div className="h-16 rounded bg-[#f2c94c]" />
+                        <p className="text-[11px] text-center text-[#8a8f98]">Warning</p>
                       </div>
                       <div className="space-y-1">
-                        <div className="h-16 rounded bg-[#ef4444]" />
-                        <p className="text-xs text-center text-[#71717a]">
-                          Error
-                        </p>
+                        <div className="h-16 rounded bg-[#eb5757]" />
+                        <p className="text-[11px] text-center text-[#8a8f98]">Error</p>
                       </div>
                       <div className="space-y-1">
-                        <div className="h-16 rounded bg-[#3b82f6]" />
-                        <p className="text-xs text-center text-[#71717a]">
-                          Info
-                        </p>
+                        <div className="h-16 rounded bg-[#4ea7fc]" />
+                        <p className="text-[11px] text-center text-[#8a8f98]">Info</p>
                       </div>
                     </div>
                   </div>
@@ -498,58 +482,58 @@ export default function ComponentsPage() {
 
           {/* Typography Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-[#18181b] mb-6">
+            <h2 className="text-2xl font-semibold text-[#f7f8f8] mb-6 tracking-[-0.022em]">
               Typography
             </h2>
             <Card>
               <CardContent>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-6xl font-bold text-[#18181b]">
+                    <p className="text-6xl font-bold text-[#f7f8f8] tracking-[-0.022em]">
                       Heading 1
                     </p>
-                    <p className="text-sm text-[#71717a] mt-1">
-                      text-6xl / font-bold
+                    <p className="text-[13px] text-[#8a8f98] mt-1">
+                      text-6xl / font-bold / tracking-[-0.022em]
                     </p>
                   </div>
                   <div>
-                    <p className="text-5xl font-bold text-[#18181b]">
+                    <p className="text-4xl font-semibold text-[#f7f8f8] tracking-[-0.022em]">
                       Heading 2
                     </p>
-                    <p className="text-sm text-[#71717a] mt-1">
-                      text-5xl / font-bold
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-4xl font-semibold text-[#18181b]">
-                      Heading 3
-                    </p>
-                    <p className="text-sm text-[#71717a] mt-1">
+                    <p className="text-[13px] text-[#8a8f98] mt-1">
                       text-4xl / font-semibold
                     </p>
                   </div>
                   <div>
-                    <p className="text-2xl font-semibold text-[#18181b]">
-                      Heading 4
+                    <p className="text-2xl font-semibold text-[#f7f8f8] tracking-[-0.022em]">
+                      Heading 3
                     </p>
-                    <p className="text-sm text-[#71717a] mt-1">
+                    <p className="text-[13px] text-[#8a8f98] mt-1">
                       text-2xl / font-semibold
                     </p>
                   </div>
                   <div>
-                    <p className="text-base text-[#18181b]">
+                    <p className="text-[15px] text-[#f7f8f8]">
                       Body text - Regular weight
                     </p>
-                    <p className="text-sm text-[#71717a] mt-1">
-                      text-base / font-normal
+                    <p className="text-[13px] text-[#8a8f98] mt-1">
+                      text-[15px] / font-normal
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-[#71717a]">
-                      Secondary text - Smaller and lighter
+                    <p className="text-[13px] text-[#d0d6e0]">
+                      Secondary text - Lighter color
                     </p>
-                    <p className="text-sm text-[#71717a] mt-1">
-                      text-sm / text-secondary
+                    <p className="text-[13px] text-[#8a8f98] mt-1">
+                      text-[13px] / secondary
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[13px] text-[#8a8f98]">
+                      Tertiary text - Smallest and lightest
+                    </p>
+                    <p className="text-[13px] text-[#8a8f98] mt-1">
+                      text-[13px] / tertiary
                     </p>
                   </div>
                 </div>

@@ -19,10 +19,10 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     ref
   ) => {
     const baseStyles = `
-      bg-white rounded-lg
+      bg-[#141516] rounded-lg
       transition-all duration-200
-      ${bordered ? 'border border-[#e5e5e5]' : ''}
-      ${hoverable ? 'hover:shadow-md hover:-translate-y-0.5 cursor-pointer' : 'shadow-sm'}
+      ${bordered ? 'border border-[#23252a]' : ''}
+      ${hoverable ? 'hover:border-[#34343a] hover:-translate-y-0.5 cursor-pointer' : ''}
     `
 
     const paddingStyles = {
@@ -68,7 +68,7 @@ export const CardTitle = forwardRef<
 >(({ className = '', children, ...props }, ref) => (
   <h3
     ref={ref}
-    className={`text-lg font-semibold text-[#18181b] ${className}`}
+    className={`text-[15px] font-medium text-[#f7f8f8] tracking-[-0.011em] ${className}`}
     {...props}
   >
     {children}
@@ -83,7 +83,7 @@ export const CardDescription = forwardRef<
 >(({ className = '', children, ...props }, ref) => (
   <p
     ref={ref}
-    className={`text-sm text-[#71717a] mt-1 ${className}`}
+    className={`text-[13px] text-[#8a8f98] mt-1 ${className}`}
     {...props}
   >
     {children}
@@ -109,7 +109,7 @@ export const CardFooter = forwardRef<
 >(({ className = '', children, ...props }, ref) => (
   <div
     ref={ref}
-    className={`mt-4 pt-4 border-t border-[#e5e5e5] ${className}`}
+    className={`mt-4 pt-4 border-t border-[#23252a] ${className}`}
     {...props}
   >
     {children}

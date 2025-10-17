@@ -33,23 +33,23 @@ export default function TestimonialsSection() {
   ]
 
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="bg-[#08090a] py-20 sm:py-24 border-b border-[#23252a]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#18181b] sm:text-5xl mb-4">
+          <h2 className="text-4xl font-bold text-[#f7f8f8] tracking-[-0.022em] sm:text-5xl mb-4">
             이미 수백 명의 셀러가
             <br />
-            <span className="text-purple-600">사용 중입니다</span>
+            <span className="bg-gradient-to-r from-[#7170ff] to-[#828fff] bg-clip-text text-transparent">사용 중입니다</span>
           </h2>
           <div className="mt-6 flex items-center justify-center gap-2">
             <div className="flex">
               {[1, 2, 3, 4, 5].map((i) => (
-                <span key={i} className="text-2xl text-yellow-500">
+                <span key={i} className="text-2xl text-[#f2c94c]">
                   ⭐
                 </span>
               ))}
             </div>
-            <span className="text-lg font-medium text-[#18181b]">
+            <span className="text-[15px] font-medium text-[#f7f8f8]">
               4.9/5.0 평균 평점
             </span>
           </div>
@@ -61,23 +61,23 @@ export default function TestimonialsSection() {
               <CardContent>
                 <div className="mb-4 flex">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-500">
+                    <span key={i} className="text-[#f2c94c]">
                       ⭐
                     </span>
                   ))}
                 </div>
-                <p className="mb-6 text-base leading-relaxed text-[#18181b]">
+                <p className="mb-6 text-[13px] leading-relaxed text-[#d0d6e0]">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-purple-200 to-pink-200 text-2xl">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#18182f] to-[#232342] text-2xl">
                     {testimonial.avatar}
                   </div>
                   <div>
-                    <p className="font-medium text-[#18181b]">
+                    <p className="text-[13px] font-medium text-[#f7f8f8]">
                       {testimonial.author}
                     </p>
-                    <p className="text-sm text-[#71717a]">{testimonial.role}</p>
+                    <p className="text-[11px] text-[#8a8f98]">{testimonial.role}</p>
                   </div>
                 </div>
               </CardContent>
@@ -86,9 +86,9 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3">
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#141516] border border-[#23252a] px-6 py-3">
             <span className="text-2xl">🎉</span>
-            <span className="font-medium text-purple-900">
+            <span className="text-[13px] font-medium text-[#f7f8f8]">
               매일 30명 이상의 새로운 셀러가 가입하고 있어요
             </span>
           </div>

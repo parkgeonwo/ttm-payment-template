@@ -32,19 +32,19 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50">
-      <div className="w-full max-w-md space-y-8 rounded-lg bg-white p-8 shadow-lg">
+    <div className="flex min-h-screen items-center justify-center bg-[#08090a]">
+      <div className="w-full max-w-md space-y-8 rounded-lg bg-[#141516] border border-[#23252a] p-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900">결제 테스트</h2>
-          <p className="mt-2 text-sm text-gray-600">
-            Google 계정으로 로그인하세요
+          <h2 className="text-3xl font-bold text-[#f7f8f8] tracking-[-0.022em]">Selloframe</h2>
+          <p className="mt-2 text-[13px] text-[#8a8f98]">
+            소셜 계정으로 간편하게 로그인하세요
           </p>
         </div>
 
         <div className="space-y-3">
           <button
             onClick={handleGoogleLogin}
-            className="w-full flex items-center justify-center gap-3 rounded-lg bg-white border border-gray-300 px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors"
+            className="w-full flex items-center justify-center gap-3 rounded-lg bg-[#232326] border border-[#34343a] px-4 py-3 text-[13px] text-[#f7f8f8] hover:bg-[#28282c] hover:border-[#3e3e44] transition-colors font-medium"
           >
             <svg className="h-5 w-5" viewBox="0 0 24 24">
               <path
@@ -69,7 +69,7 @@ export default function LoginPage() {
 
           <button
             onClick={handleKakaoLogin}
-            className="w-full flex items-center justify-center gap-3 rounded-lg bg-[#FEE500] px-4 py-3 text-[#000000] hover:bg-[#FDD835] transition-colors font-medium"
+            className="w-full flex items-center justify-center gap-3 rounded-lg bg-[#FEE500] px-4 py-3 text-[13px] text-[#000000] hover:bg-[#FDD835] transition-colors font-medium"
           >
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.442 1.745 4.58 4.375 5.763l-.935 3.427c-.09.333.25.63.555.485l4.12-2.453C10.71 17.95 11.34 18 12 18c5.523 0 10-3.477 10-7.5S17.523 3 12 3z" />

@@ -30,14 +30,14 @@ export default function PricingPage() {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
-        <div className="text-lg">로딩 중...</div>
+      <div className="flex min-h-screen items-center justify-center bg-[#08090a]">
+        <div className="text-[15px] text-[#f7f8f8]">로딩 중...</div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#08090a]">
       <Header user={user} onLogout={handleLogout} />
       <main>
         <PricingPlans />

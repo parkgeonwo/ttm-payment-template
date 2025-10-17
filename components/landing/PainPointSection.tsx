@@ -1,74 +1,57 @@
-import Card, { CardContent } from '@/components/ui/Card'
-
 export default function PainPointSection() {
   const painPoints = [
     {
-      emoji: '💸',
-      title: '비싼 촬영 비용',
-      description: '모델 + 스튜디오 + 촬영 = 최소 50만원\n한 달에 몇 번이나 찍을 수 있나요?',
+      icon: '💸',
+      title: '스튜디오 촬영 비용 부담',
+      description:
+        '한 번 촬영에 50만원씩 나가는데, 매달 신상품이 계속 늘어나고 있어요...',
     },
     {
-      emoji: '⏰',
-      title: '긴 작업 시간',
-      description: '촬영 섭외부터 결과물까지 최소 1주일\n트렌드는 이미 지나가고...',
+      icon: '⏰',
+      title: '시간도 돈이다',
+      description:
+        '모델 섭외부터 스튜디오 예약까지 준비 시간만 일주일. 빠르게 출시해야 하는데...',
     },
     {
-      emoji: '😓',
-      title: '퀄리티 걱정',
-      description: '직접 찍으면 아마추어 티 팍팍\n고객들이 클릭도 안 해요',
+      icon: '📉',
+      title: '평범한 이미지로는 경쟁력 없음',
+      description:
+        '스마트폰으로 찍은 사진은 너무 티 나고, 그렇다고 전문 촬영은 부담스럽고...',
     },
     {
-      emoji: '🔄',
-      title: '수정의 어려움',
-      description: '다시 찍자니 비용, 참자니 마음...\n완벽한 컷은 언제 나올까요?',
+      icon: '🔄',
+      title: '시즌마다 반복되는 고민',
+      description: '여름, 겨울 시즌마다 새 이미지 필요한데 매번 촬영 예산 고민',
     },
   ]
 
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="py-20 sm:py-24 bg-[#08090a]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#18181b] sm:text-5xl">
-            쇼핑몰 운영하면서
-            <br />
-            <span className="text-[#71717a]">이런 고민 하셨죠?</span>
+          <h2 className="text-3xl font-bold tracking-[-0.022em] text-[#f7f8f8] sm:text-4xl mb-4">
+            이런 고민, 하고 계신가요?
           </h2>
+          <p className="text-[15px] text-[#8a8f98] max-w-2xl mx-auto">
+            매달 늘어나는 상품 촬영 비용과 시간에 지치셨나요?
+          </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-16">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {painPoints.map((point, index) => (
-            <Card key={index} hoverable padding="lg">
-              <CardContent>
-                <div className="text-center">
-                  <div className="mb-4 text-5xl">{point.emoji}</div>
-                  <h3 className="mb-3 text-lg font-semibold text-[#18181b]">
-                    {point.title}
-                  </h3>
-                  <p className="whitespace-pre-line text-sm text-[#71717a]">
-                    {point.description}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+            <div
+              key={index}
+              className="relative rounded-xl bg-[#141516] border border-[#23252a] p-6 hover:border-[#34343a] transition-all"
+            >
+              <div className="text-4xl mb-4">{point.icon}</div>
+              <h3 className="text-[15px] font-medium text-[#f7f8f8] mb-2">
+                {point.title}
+              </h3>
+              <p className="text-[13px] text-[#8a8f98] leading-relaxed">
+                {point.description}
+              </p>
+            </div>
           ))}
-        </div>
-
-        <div className="mx-auto max-w-3xl">
-          <Card className="border-2 border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50">
-            <CardContent className="py-8">
-              <div className="text-center">
-                <div className="mb-2 text-5xl font-bold text-purple-600">
-                  40%
-                </div>
-                <p className="text-lg font-medium text-[#18181b]">
-                  상품 이미지 퀄리티 향상 시 전환율 최대 40% 증가
-                </p>
-                <p className="mt-2 text-sm text-[#71717a]">
-                  - 2023 이커머스 연구 보고서
-                </p>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>

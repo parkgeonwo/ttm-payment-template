@@ -1,5 +1,4 @@
 import { ButtonHTMLAttributes, forwardRef } from 'react'
-import { theme } from '@/lib/theme'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger'
 export type ButtonSize = 'sm' | 'md' | 'lg'
@@ -33,42 +32,42 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       inline-flex items-center justify-center
       font-medium rounded-md
       transition-all duration-200
-      focus:outline-none focus:ring-2 focus:ring-offset-2
-      disabled:opacity-50 disabled:cursor-not-allowed
+      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#08090a]
+      disabled:opacity-40 disabled:cursor-not-allowed
       ${fullWidth ? 'w-full' : ''}
     `
 
     const variantStyles = {
       primary: `
-        bg-[${theme.colors.primary[500]}] text-white
-        hover:bg-[${theme.colors.primary[600]}]
-        active:bg-[${theme.colors.primary[700]}]
-        focus:ring-[${theme.colors.primary[500]}]
+        bg-[#5e6ad2] text-white
+        hover:bg-[#4e5bc2]
+        active:bg-[#3e4bb2]
+        focus:ring-[#5e6ad2]/30
       `,
       secondary: `
-        bg-[${theme.colors.background.tertiary}] text-[${theme.colors.text.primary}]
-        hover:bg-[${theme.colors.border.light}]
-        active:bg-[${theme.colors.border.medium}]
-        focus:ring-[${theme.colors.border.dark}]
+        bg-[#232326] text-[#f7f8f8] border border-[#34343a]
+        hover:bg-[#28282c] hover:border-[#3e3e44]
+        active:bg-[#1c1c1f]
+        focus:ring-[#5e6ad2]/20
       `,
       ghost: `
-        bg-transparent text-[${theme.colors.text.secondary}]
-        hover:bg-[${theme.colors.semantic.hover}]
-        active:bg-[${theme.colors.semantic.pressed}]
-        focus:ring-[${theme.colors.border.light}]
+        bg-transparent text-[#d0d6e0] border border-transparent
+        hover:bg-[#141516] hover:text-[#f7f8f8]
+        active:bg-[#1c1c1f]
+        focus:ring-[#5e6ad2]/20
       `,
       danger: `
-        bg-[${theme.colors.status.error}] text-white
-        hover:bg-red-600
-        active:bg-red-700
-        focus:ring-red-500
+        bg-[#eb5757] text-white
+        hover:bg-[#db4747]
+        active:bg-[#cb3737]
+        focus:ring-[#eb5757]/30
       `,
     }
 
     const sizeStyles = {
-      sm: 'text-sm px-3 py-1.5 gap-1.5',
-      md: 'text-sm px-4 py-2 gap-2',
-      lg: 'text-base px-6 py-3 gap-2',
+      sm: 'text-[13px] px-3 py-1.5 gap-1.5',
+      md: 'text-[13px] px-4 py-2 gap-2',
+      lg: 'text-[15px] px-6 py-2.5 gap-2',
     }
 
     const styles = `
@@ -107,9 +106,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             />
           </svg>
         )}
-        {!loading && leftIcon && <span>{leftIcon}</span>}
+        {!loading && leftIcon && <span className="flex-shrink-0">{leftIcon}</span>}
         {children}
-        {!loading && rightIcon && <span>{rightIcon}</span>}
+        {!loading && rightIcon && <span className="flex-shrink-0">{rightIcon}</span>}
       </button>
     )
   }

@@ -34,7 +34,7 @@ const plans: PricingPlan[] = [
   {
     id: 'pro',
     name: 'Pro',
-    price: 39,
+    price: 10,
     period: '월',
     description: '전문가를 위한 추천 플랜',
     productId: 'prod_YOUR_PRO_PRODUCT_ID', // Replace with actual Creem Product ID
@@ -117,13 +117,13 @@ export default function PricingPlans() {
   }
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8">
+    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-[#08090a] min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-[#f7f8f8] tracking-[-0.022em] mb-4">
             요금제를 선택하세요
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-[15px] text-[#8a8f98]">
             프로젝트에 맞는 최적의 플랜을 선택하세요
           </p>
         </div>
@@ -132,56 +132,56 @@ export default function PricingPlans() {
           {plans.map((plan) => (
             <div
               key={plan.id}
-              className={`relative bg-white rounded-2xl shadow-lg border-2 transition-all hover:shadow-xl hover:-translate-y-1 ${
+              className={`relative bg-[#141516] rounded-2xl border-2 transition-all hover:-translate-y-1 ${
                 plan.recommended
-                  ? 'border-blue-500 ring-4 ring-blue-100'
-                  : 'border-gray-200'
+                  ? 'border-[#5e6ad2] ring-4 ring-[#5e6ad2]/20'
+                  : 'border-[#23252a] hover:border-[#34343a]'
               }`}
             >
               {plan.recommended && (
                 <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                  <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-gradient-to-r from-[#5e6ad2] to-[#7170ff] text-white px-4 py-1 rounded-full text-[13px] font-semibold">
                     추천
                   </span>
                 </div>
               )}
 
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl font-bold text-[#f7f8f8] tracking-[-0.022em] mb-2">
                   {plan.name}
                 </h3>
-                <p className="text-gray-600 text-sm mb-6">{plan.description}</p>
+                <p className="text-[#8a8f98] text-[13px] mb-6">{plan.description}</p>
 
                 <div className="mb-6">
                   <div className="flex items-baseline">
-                    <span className="text-4xl font-bold text-gray-900">
+                    <span className="text-4xl font-bold text-[#f7f8f8]">
                       ${plan.price}
                     </span>
-                    <span className="text-gray-600 ml-2">/ {plan.period}</span>
+                    <span className="text-[#8a8f98] ml-2 text-[13px]">/ {plan.period}</span>
                   </div>
                 </div>
 
                 <button
                   onClick={() => handleSelectPlan(plan)}
                   disabled={isPending}
-                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
+                  className={`w-full py-3 px-6 rounded-lg text-[13px] font-semibold transition-colors ${
                     plan.recommended
-                      ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700'
-                      : 'bg-gray-900 text-white hover:bg-gray-800'
+                      ? 'bg-gradient-to-r from-[#5e6ad2] to-[#7170ff] text-white hover:from-[#4e5bc2] hover:to-[#6160ef]'
+                      : 'bg-[#232326] text-white hover:bg-[#28282c] border border-[#34343a]'
                   } disabled:opacity-50 disabled:cursor-not-allowed`}
                 >
                   {isPending ? '처리 중...' : '선택하기'}
                 </button>
 
                 <div className="mt-8 space-y-4">
-                  <p className="text-sm font-semibold text-gray-900">
+                  <p className="text-[13px] font-semibold text-[#f7f8f8]">
                     포함된 기능:
                   </p>
                   <ul className="space-y-3">
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
                         <svg
-                          className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"
+                          className="w-5 h-5 text-[#6fcf97] mr-3 flex-shrink-0 mt-0.5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -193,7 +193,7 @@ export default function PricingPlans() {
                             d="M5 13l4 4L19 7"
                           />
                         </svg>
-                        <span className="text-gray-700 text-sm">{feature}</span>
+                        <span className="text-[#d0d6e0] text-[13px]">{feature}</span>
                       </li>
                     ))}
                   </ul>

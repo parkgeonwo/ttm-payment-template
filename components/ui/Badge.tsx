@@ -1,5 +1,4 @@
 import { HTMLAttributes, forwardRef } from 'react'
-import { theme } from '@/lib/theme'
 
 export type BadgeVariant = 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info'
 export type BadgeSize = 'sm' | 'md' | 'lg'
@@ -29,18 +28,18 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
     `
 
     const variantStyles = {
-      default: 'bg-[#f5f5f5] text-[#71717a] border border-[#e5e5e5]',
-      primary: `bg-[${theme.colors.primary[100]}] text-[${theme.colors.primary[700]}] border border-[${theme.colors.primary[200]}]`,
-      success: `bg-green-50 text-green-700 border border-green-200`,
-      warning: `bg-amber-50 text-amber-700 border border-amber-200`,
-      error: `bg-red-50 text-red-700 border border-red-200`,
-      info: `bg-blue-50 text-blue-700 border border-blue-200`,
+      default: 'bg-[#232326] text-[#d0d6e0] border border-[#34343a]',
+      primary: 'bg-[#18182f] text-[#828fff] border border-[#5e6ad2]/30',
+      success: 'bg-[#1a2e26] text-[#4cb782] border border-[#4cb782]/30',
+      warning: 'bg-[#2e2716] text-[#f2c94c] border border-[#f2c94c]/30',
+      error: 'bg-[#2e1a1a] text-[#eb5757] border border-[#eb5757]/30',
+      info: 'bg-[#1a2633] text-[#4ea7fc] border border-[#4ea7fc]/30',
     }
 
     const sizeStyles = {
-      sm: 'text-xs px-2 py-0.5 gap-1',
-      md: 'text-xs px-2.5 py-1 gap-1.5',
-      lg: 'text-sm px-3 py-1.5 gap-2',
+      sm: 'text-[11px] px-2 py-0.5 gap-1',
+      md: 'text-[11px] px-2.5 py-1 gap-1.5',
+      lg: 'text-[13px] px-3 py-1.5 gap-2',
     }
 
     const dotElement = dot && (

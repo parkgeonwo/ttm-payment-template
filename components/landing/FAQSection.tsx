@@ -40,13 +40,13 @@ export default function FAQSection() {
   ]
 
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="bg-[#08090a] py-20 sm:py-24 border-b border-[#23252a]">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#18181b] sm:text-5xl mb-4">
+          <h2 className="text-4xl font-bold text-[#f7f8f8] tracking-[-0.022em] sm:text-5xl mb-4">
             자주 묻는 질문
           </h2>
-          <p className="mt-4 text-lg text-[#71717a]">
+          <p className="mt-4 text-[15px] text-[#8a8f98]">
             궁금한 점이 있으신가요? 여기서 답을 찾아보세요
           </p>
         </div>
@@ -55,22 +55,23 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <Card
               key={index}
-              className="cursor-pointer transition-all hover:shadow-md"
+              className="cursor-pointer transition-all"
+              hoverable
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
             >
               <CardContent className="p-6">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-[#18181b] mb-2">
+                    <h3 className="text-[15px] font-semibold text-[#f7f8f8] mb-2">
                       Q. {faq.question}
                     </h3>
                     {openIndex === index && (
-                      <p className="mt-3 text-base leading-relaxed text-[#71717a]">
+                      <p className="mt-3 text-[13px] leading-relaxed text-[#8a8f98]">
                         A. {faq.answer}
                       </p>
                     )}
                   </div>
-                  <div className="text-2xl text-purple-600 transition-transform">
+                  <div className="text-2xl text-[#828fff] transition-transform">
                     {openIndex === index ? '−' : '+'}
                   </div>
                 </div>
@@ -80,15 +81,15 @@ export default function FAQSection() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-[#71717a] mb-4">더 궁금한 점이 있으신가요?</p>
+          <p className="text-[#8a8f98] mb-4 text-[13px]">더 궁금한 점이 있으신가요?</p>
           <a
-            href="mailto:support@productstudio.ai"
-            className="text-purple-600 font-medium hover:underline"
+            href="mailto:support@selloframe.com"
+            className="text-[#828fff] text-[13px] font-medium hover:underline"
           >
-            support@productstudio.ai
+            support@selloframe.com
           </a>
-          <span className="mx-2 text-[#d4d4d8]">|</span>
-          <span className="text-[#71717a]">카카오톡 상담: 평일 9-6시</span>
+          <span className="mx-2 text-[#34343a]">|</span>
+          <span className="text-[#8a8f98] text-[13px]">카카오톡 상담: 평일 9-6시</span>
         </div>
       </div>
     </section>

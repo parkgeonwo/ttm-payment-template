@@ -1,101 +1,71 @@
-import Card, { CardContent } from '@/components/ui/Card'
 import Badge from '@/components/ui/Badge'
 
 export default function SolutionSection() {
-  const steps = [
+  const solutions = [
     {
-      number: '1',
-      title: '상품만 업로드',
-      description: '휴대폰으로 찍은 사진도 OK\n배경이 지저분해도 괜찮아요',
+      step: '01',
+      title: '제품 사진 업로드',
+      description: '촬영한 제품 이미지를 간단히 업로드하세요',
       icon: '📤',
     },
     {
-      number: '2',
-      title: '원하는 스타일 선택',
-      description: '100가지 AI 모델\n무제한 배경 시나리오\n원하는 분위기를 골라보세요',
+      step: '02',
+      title: 'AI가 자동 배경 제거',
+      description: '몇 초 만에 완벽하게 배경이 제거됩니다',
+      icon: '✂️',
+    },
+    {
+      step: '03',
+      title: '원하는 배경 선택',
+      description: '다양한 템플릿 중 브랜드에 맞는 배경을 선택하세요',
       icon: '🎨',
     },
     {
-      number: '3',
-      title: '30초 후 완성!',
-      description: '전문가급 퀄리티\n바로 다운로드해서 사용하세요',
-      icon: '✨',
+      step: '04',
+      title: '완성된 이미지 다운로드',
+      description: '고화질 쇼핑몰용 이미지를 바로 사용하세요',
+      icon: '⬇️',
     },
   ]
 
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="py-20 sm:py-24 bg-gradient-to-b from-[#08090a] to-[#0f1011] border-b border-[#23252a]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Badge variant="primary" size="lg" className="mb-4">
-            How it works
+            How it Works
           </Badge>
-          <h2 className="text-4xl font-bold text-[#18181b] sm:text-5xl mb-4">
-            이제 AI가 당신의
-            <br />
-            <span className="text-purple-600">전속 포토그래퍼</span>입니다
+          <h2 className="text-3xl font-bold tracking-[-0.022em] text-[#f7f8f8] sm:text-4xl mb-4">
+            클릭 4번이면 끝
           </h2>
-          <p className="mt-4 text-lg text-[#71717a]">
-            단 3단계로 전문가급 상품 이미지를 완성하세요
+          <p className="text-[15px] text-[#8a8f98] max-w-2xl mx-auto">
+            복잡한 편집 프로그램? 필요 없습니다
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
-          {steps.map((step, index) => (
-            <div key={index} className="relative">
-              <Card hoverable padding="lg" className="h-full">
-                <CardContent>
-                  <div className="mb-6 flex items-center justify-between">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-2xl font-bold text-white shadow-lg">
-                      {step.number}
-                    </div>
-                    <div className="text-5xl">{step.icon}</div>
-                  </div>
-                  <h3 className="mb-3 text-2xl font-semibold text-[#18181b]">
-                    {step.title}
-                  </h3>
-                  <p className="whitespace-pre-line text-base leading-relaxed text-[#71717a]">
-                    {step.description}
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Arrow between cards */}
-              {index < steps.length - 1 && (
-                <div className="absolute -right-4 top-1/2 z-10 hidden -translate-y-1/2 lg:block">
-                  <div className="text-3xl text-purple-300">→</div>
-                </div>
-              )}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {solutions.map((solution, index) => (
+            <div
+              key={index}
+              className="relative rounded-xl bg-[#141516] border border-[#23252a] p-6 text-center"
+            >
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#5e6ad2] flex items-center justify-center text-[11px] font-bold text-white">
+                {solution.step}
+              </div>
+              <div className="text-5xl mb-4 mt-2">{solution.icon}</div>
+              <h3 className="text-[15px] font-medium text-[#f7f8f8] mb-2">
+                {solution.title}
+              </h3>
+              <p className="text-[13px] text-[#8a8f98]">{solution.description}</p>
             </div>
           ))}
         </div>
 
-        {/* Visual Demo */}
-        <div className="mt-16 rounded-2xl bg-gradient-to-r from-purple-100 to-pink-100 p-8 sm:p-12">
-          <div className="text-center">
-            <p className="text-lg font-medium text-purple-900 mb-4">
-              지금 바로 체험해보세요
-            </p>
-            <div className="flex justify-center gap-4">
-              <div className="rounded-lg bg-white p-3 shadow-md">
-                <div className="h-32 w-24 rounded bg-gray-200 flex items-center justify-center">
-                  <span className="text-3xl">📦</span>
-                </div>
-                <p className="mt-2 text-xs text-[#71717a]">원본</p>
-              </div>
-              <div className="flex items-center">
-                <span className="text-2xl">⚡</span>
-              </div>
-              <div className="rounded-lg bg-white p-3 shadow-lg">
-                <div className="h-32 w-24 rounded bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center">
-                  <span className="text-3xl">✨</span>
-                </div>
-                <p className="mt-2 text-xs font-medium text-purple-600">
-                  30초 완성
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="mt-12 text-center">
+          <p className="text-[13px] text-[#8a8f98]">
+            평균 소요 시간:{' '}
+            <span className="text-[#828fff] font-semibold">1분 미만</span>
+          </p>
         </div>
       </div>
     </section>

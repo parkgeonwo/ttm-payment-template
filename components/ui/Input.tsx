@@ -1,5 +1,4 @@
 import { InputHTMLAttributes, forwardRef } from 'react'
-import { theme } from '@/lib/theme'
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
@@ -28,34 +27,36 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const inputId = id || label?.toLowerCase().replace(/\s+/g, '-')
 
     const baseStyles = `
-      px-3 py-2 text-sm
-      bg-white
+      px-3 py-2 text-[13px]
+      bg-[#08090a]
+      text-[#f7f8f8]
+      placeholder:text-[#62666d]
       border rounded-md
       transition-all duration-200
       focus:outline-none focus:ring-2 focus:ring-offset-0
-      disabled:opacity-50 disabled:cursor-not-allowed
+      disabled:opacity-40 disabled:cursor-not-allowed
       ${fullWidth ? 'w-full' : ''}
       ${leftIcon ? 'pl-10' : ''}
       ${rightIcon ? 'pr-10' : ''}
     `
 
     const stateStyles = error
-      ? `border-[${theme.colors.status.error}] focus:border-[${theme.colors.status.error}] focus:ring-red-200`
-      : `border-[${theme.colors.border.light}] focus:border-[${theme.colors.border.focus}] focus:ring-purple-100`
+      ? 'border-[#eb5757] focus:border-[#eb5757] focus:ring-[#eb5757]/20'
+      : 'border-[#23252a] focus:border-[#5e6ad2] focus:ring-[#5e6ad2]/20 hover:border-[#34343a]'
 
     return (
       <div className={`${fullWidth ? 'w-full' : ''}`}>
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-sm font-medium text-[#18181b] mb-1.5"
+            className="block text-[13px] font-medium text-[#d0d6e0] mb-1.5"
           >
             {label}
           </label>
         )}
         <div className="relative">
           {leftIcon && (
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-[#71717a]">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8a8f98]">
               {leftIcon}
             </div>
           )}
@@ -66,16 +67,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             {...props}
           />
           {rightIcon && (
-            <div className="absolute right-3 top-1/2 -translate-y-1/2 text-[#71717a]">
+            <div className="absolute right-3 top-1/2 -translate-y-1/2 text-[#8a8f98]">
               {rightIcon}
             </div>
           )}
         </div>
         {error && (
-          <p className="mt-1.5 text-sm text-[#ef4444]">{error}</p>
+          <p className="mt-1.5 text-[13px] text-[#eb5757]">{error}</p>
         )}
         {helperText && !error && (
-          <p className="mt-1.5 text-sm text-[#71717a]">{helperText}</p>
+          <p className="mt-1.5 text-[13px] text-[#8a8f98]">{helperText}</p>
         )}
       </div>
     )

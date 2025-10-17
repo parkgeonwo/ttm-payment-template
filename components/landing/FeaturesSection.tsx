@@ -35,17 +35,17 @@ export default function FeaturesSection() {
   ]
 
   return (
-    <section className="bg-[#fafafa] py-20 sm:py-24">
+    <section className="bg-[#08090a] py-20 sm:py-24 border-b border-[#23252a]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#18181b] sm:text-5xl mb-4">
+          <h2 className="text-4xl font-bold tracking-[-0.022em] text-[#f7f8f8] sm:text-5xl mb-4">
             전문가도 놀라는
             <br />
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#7170ff] to-[#828fff] bg-clip-text text-transparent">
               강력한 기능들
             </span>
           </h2>
-          <p className="mt-4 text-lg text-[#71717a]">
+          <p className="mt-4 text-[15px] text-[#8a8f98]">
             복잡한 설정 없이, 클릭 몇 번으로 완성됩니다
           </p>
         </div>
@@ -55,10 +55,10 @@ export default function FeaturesSection() {
             <Card key={index} hoverable padding="lg">
               <CardContent>
                 <div className="mb-4 text-5xl">{feature.icon}</div>
-                <h3 className="mb-3 text-xl font-semibold text-[#18181b]">
+                <h3 className="mb-3 text-[17px] font-medium text-[#f7f8f8] tracking-[-0.011em]">
                   {feature.title}
                 </h3>
-                <p className="whitespace-pre-line text-sm leading-relaxed text-[#71717a]">
+                <p className="whitespace-pre-line text-[13px] leading-relaxed text-[#8a8f98]">
                   {feature.description}
                 </p>
               </CardContent>
@@ -68,18 +68,18 @@ export default function FeaturesSection() {
 
         {/* Mini Gallery Preview */}
         <div className="mt-16 text-center">
-          <div className="inline-flex gap-2 rounded-full bg-white px-6 py-3 shadow-md">
+          <div className="inline-flex gap-2 rounded-full bg-[#141516] border border-[#23252a] px-6 py-3">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
               <div
                 key={i}
-                className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-200 to-pink-200"
+                className="h-10 w-10 rounded-full bg-gradient-to-br from-[#18182f] to-[#232342]"
               />
             ))}
-            <div className="flex items-center pl-2 text-sm font-medium text-[#71717a]">
+            <div className="flex items-center pl-2 text-[13px] font-medium text-[#8a8f98]">
               +92 more
             </div>
           </div>
-          <p className="mt-3 text-sm text-[#71717a]">
+          <p className="mt-3 text-[13px] text-[#8a8f98]">
             100종 이상의 AI 모델을 자유롭게 사용하세요
           </p>
         </div>

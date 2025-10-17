@@ -37,6 +37,8 @@ export async function updateSession(request: NextRequest) {
     '/login',
     '/pricing',
     '/components',
+    '/terms',
+    '/privacy',
     '/auth/callback',
   ]
 
