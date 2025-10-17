@@ -370,6 +370,56 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 - [ ] 네이밍 컨벤션을 따랐는가?
 - [ ] 불필요한 코드가 없는가?
 
+### ESLint 규칙
+- [ ] JSX 내 특수 문자 이스케이프 (`react/no-unescaped-entities`)
+- [ ] 빌드 전 ESLint 에러 없음
+
+---
+
+## ⚠️ ESLint 규칙: JSX 내 특수 문자 처리
+
+### 필수: `react/no-unescaped-entities` 규칙 준수
+
+JSX 텍스트 콘텐츠에서 특수 문자(`"`, `'`, `>`, `<`, `}`)를 직접 사용하면 Vercel 배포 시 빌드 에러가 발생합니다.
+
+### ❌ 잘못된 예시
+```tsx
+// ❌ 빌드 에러 발생
+<p>회사(이하 "회사")는 서비스를 제공합니다.</p>
+<li>웹사이트 내 '마이페이지'를 통한 처리</li>
+```
+
+### ✅ 올바른 예시
+```tsx
+// ✅ HTML 엔티티 사용
+<p>회사(이하 &ldquo;회사&rdquo;)는 서비스를 제공합니다.</p>
+<li>웹사이트 내 &lsquo;마이페이지&rsquo;를 통한 처리</li>
+```
+
+### HTML 엔티티 참조표
+
+| 문자 | HTML 엔티티 | 설명 |
+|------|-------------|------|
+| `"` | `&quot;` `&ldquo;` `&#34;` `&rdquo;` | 큰따옴표 |
+| `'` | `&apos;` `&lsquo;` `&#39;` `&rsquo;` | 작은따옴표 |
+| `>` | `&gt;` | 보다 큰 |
+| `<` | `&lt;` | 보다 작은 |
+| `}` | `&#125;` | 중괄호 닫기 |
+
+### 빌드 전 검증
+```bash
+# 빌드 전 반드시 실행하여 에러 확인
+npm run build
+
+# 또는 빠른 검증 (린트 + 타입 체크)
+npm run validate
+```
+
+### 주의사항
+- **HTML 속성 내부**에서는 따옴표를 자유롭게 사용 가능 (예: `className="text-[#f7f8f8]"`)
+- **JSX 텍스트 콘텐츠**에서만 HTML 엔티티로 변환 필요
+- Vercel 배포 시 이 규칙을 위반하면 자동 빌드 실패
+
 ---
 
 ## 📚 참고 자료
@@ -393,10 +443,66 @@ npm run dev
 http://localhost:3000/components
 ```
 
-### 빌드
+### 빌드 및 검증
 ```bash
+# 전체 빌드 (프로덕션)
 npm run build
+
+# 빠른 검증 (ESLint + TypeScript)
+npm run validate
+
+# ESLint만 실행
+npm run lint
+
+# TypeScript 타입 체크만 실행
+npm run type-check
 ```
+
+---
+
+## 🔍 배포 전 체크리스트
+
+### Vercel 배포 전 필수 확인사항
+
+1. **ESLint 에러 확인**
+   ```bash
+   npm run lint
+   ```
+   - `react/no-unescaped-entities` 에러가 없어야 함
+   - JSX 내 특수 문자가 HTML 엔티티로 변환되었는지 확인
+
+2. **TypeScript 타입 에러 확인**
+   ```bash
+   npm run type-check
+   ```
+   - 타입 에러가 없어야 함
+
+3. **전체 빌드 테스트**
+   ```bash
+   npm run build
+   ```
+   - 빌드가 성공적으로 완료되어야 함
+   - 에러나 경고가 없어야 함
+
+4. **또는 통합 검증**
+   ```bash
+   npm run validate
+   ```
+   - ESLint + TypeScript를 한 번에 검증
+
+### 자주 발생하는 배포 에러
+
+#### 1. `react/no-unescaped-entities`
+- **원인**: JSX 텍스트에서 `"`, `'` 등의 특수 문자를 직접 사용
+- **해결**: HTML 엔티티로 변환 (`&ldquo;`, `&rdquo;`, `&lsquo;`, `&rsquo;`)
+
+#### 2. TypeScript 타입 에러
+- **원인**: 타입이 명시되지 않았거나 잘못된 타입 사용
+- **해결**: 모든 props, 함수, 변수에 명시적 타입 지정
+
+#### 3. Import 경로 에러
+- **원인**: 절대 경로(`@/`)가 잘못 사용됨
+- **해결**: `tsconfig.json`의 paths 설정 확인
 
 ---
 

@@ -32,7 +32,7 @@ export default function TermsPage() {
 
           <div className="text-[15px] text-[#d0d6e0] leading-relaxed space-y-8">
             <p>
-              본 이용약관(이하 "약관")은 Selloframe(이하 "서비스")을 운영하는 대표자 박건우(이하 "회사")가 제공하는 서비스의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
+              본 이용약관(이하 &ldquo;약관&rdquo;)은 Selloframe(이하 &ldquo;서비스&rdquo;)을 운영하는 대표자 박건우(이하 &ldquo;회사&rdquo;)가 제공하는 서비스의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
             </p>
 
             <section>
@@ -49,11 +49,11 @@ export default function TermsPage() {
                 제2조 (용어의 정의)
               </h2>
               <ol className="list-decimal list-inside space-y-2">
-                <li><strong className="text-[#f7f8f8]">"서비스"</strong>란 회사가 제공하는 AI 기반 상품 이미지 생성 플랫폼 Selloframe 및 관련 제반 서비스를 의미합니다.</li>
-                <li><strong className="text-[#f7f8f8]">"회원"</strong>이란 본 약관에 동의하고 회사와 서비스 이용계약을 체결한 자를 의미합니다.</li>
-                <li><strong className="text-[#f7f8f8]">"크레딧"</strong>이란 서비스 내에서 이미지 생성 등의 기능을 이용하기 위해 필요한 가상의 결제 단위를 의미합니다.</li>
-                <li><strong className="text-[#f7f8f8]">"AI 생성 이미지"</strong>란 회원이 업로드한 원본 이미지와 입력한 조건을 기반으로 AI가 생성한 결과물을 의미합니다.</li>
-                <li><strong className="text-[#f7f8f8]">"구독 플랜"</strong>이란 정기 결제를 통해 매월 일정량의 크레딧과 서비스 기능을 제공받는 상품을 의미합니다.</li>
+                <li><strong className="text-[#f7f8f8]">&ldquo;서비스&rdquo;</strong>란 회사가 제공하는 AI 기반 상품 이미지 생성 플랫폼 Selloframe 및 관련 제반 서비스를 의미합니다.</li>
+                <li><strong className="text-[#f7f8f8]">&ldquo;회원&rdquo;</strong>이란 본 약관에 동의하고 회사와 서비스 이용계약을 체결한 자를 의미합니다.</li>
+                <li><strong className="text-[#f7f8f8]">&ldquo;크레딧&rdquo;</strong>이란 서비스 내에서 이미지 생성 등의 기능을 이용하기 위해 필요한 가상의 결제 단위를 의미합니다.</li>
+                <li><strong className="text-[#f7f8f8]">&ldquo;AI 생성 이미지&rdquo;</strong>란 회원이 업로드한 원본 이미지와 입력한 조건을 기반으로 AI가 생성한 결과물을 의미합니다.</li>
+                <li><strong className="text-[#f7f8f8]">&ldquo;구독 플랜&rdquo;</strong>이란 정기 결제를 통해 매월 일정량의 크레딧과 서비스 기능을 제공받는 상품을 의미합니다.</li>
               </ol>
             </section>
 
@@ -242,7 +242,7 @@ export default function TermsPage() {
                 제14조 (개인정보 보호)
               </h2>
               <p>
-                회사는 관련 법령이 정하는 바에 따라 회원의 개인정보를 보호하기 위해 노력합니다. 개인정보의 보호 및 이용에 대해서는 별도의 "개인정보 처리방침"에 따릅니다.
+                회사는 관련 법령이 정하는 바에 따라 회원의 개인정보를 보호하기 위해 노력합니다. 개인정보의 보호 및 이용에 대해서는 별도의 &ldquo;개인정보 처리방침&rdquo;에 따릅니다.
               </p>
             </section>
 

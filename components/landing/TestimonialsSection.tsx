@@ -67,7 +67,7 @@ export default function TestimonialsSection() {
                   ))}
                 </div>
                 <p className="mb-6 text-[13px] leading-relaxed text-[#d0d6e0]">
-                  &ldquo;{testimonial.text}&rdquo;
+                  {testimonial.text}
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#18182f] to-[#232342] text-2xl">

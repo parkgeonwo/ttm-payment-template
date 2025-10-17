@@ -33,7 +33,7 @@ export default function PrivacyPage() {
 
           <div className="text-[15px] text-[#d0d6e0] leading-relaxed space-y-8">
             <p>
-              Selloframe을 운영하는 대표자 박건우(이하 "회사")는 「개인정보 보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등 관련 법령에 따라 이용자의 개인정보를 보호하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 다음과 같이 개인정보 처리방침을 수립·공개합니다.
+              Selloframe을 운영하는 대표자 박건우(이하 &ldquo;회사&rdquo;)는 「개인정보 보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등 관련 법령에 따라 이용자의 개인정보를 보호하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 다음과 같이 개인정보 처리방침을 수립·공개합니다.
             </p>
 
             <section>
@@ -328,7 +328,7 @@ export default function PrivacyPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-[#f7f8f8] tracking-[-0.022em] mb-2">4. 권리 행사 방법</h3>
                   <ul className="list-disc list-inside space-y-1 text-[#8a8f98]">
-                    <li>웹사이트 내 '마이페이지'를 통한 직접 처리</li>
+                    <li>웹사이트 내 &lsquo;마이페이지&rsquo;를 통한 직접 처리</li>
                     <li>이메일을 통한 요청</li>
                   </ul>
                 </div>
@@ -417,7 +417,7 @@ export default function PrivacyPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-[#f7f8f8] tracking-[-0.022em] mb-2">1. 쿠키(Cookie)의 사용</h3>
                   <p className="text-[#8a8f98]">
-                    회사는 개인화되고 맞춤화된 서비스를 제공하기 위해 이용자의 정보를 저장하고 수시로 불러오는 '쿠키(cookie)'를 사용합니다.
+                    회사는 개인화되고 맞춤화된 서비스를 제공하기 위해 이용자의 정보를 저장하고 수시로 불러오는 &lsquo;쿠키(cookie)&rsquo;를 사용합니다.
                   </p>
                 </div>
 
