@@ -448,7 +448,7 @@ export default function PrivacyPage() {
                 <ul className="space-y-2">
                   <li><strong className="text-[#d0d6e0]">성명:</strong> <span className="text-[#8a8f98]">박건우</span></li>
                   <li><strong className="text-[#d0d6e0]">직책:</strong> <span className="text-[#8a8f98]">대표</span></li>
-                  <li><strong className="text-[#d0d6e0]">이메일:</strong> <span className="text-[#828fff]">itstime2make@gmail.com</span></li>
+                  <li><strong className="text-[#d0d6e0]">이메일:</strong> <span className="text-[#828fff]">ceo@82studio.xyz</span></li>
                 </ul>
               </div>
             </section>
@@ -487,7 +487,7 @@ export default function PrivacyPage() {
               </p>
               <div className="text-[#8a8f98]">
                 <p><strong className="text-[#f7f8f8]">대표자:</strong> 박건우</p>
-                <p><strong className="text-[#f7f8f8]">이메일:</strong> itstime2make@gmail.com</p>
+                <p><strong className="text-[#f7f8f8]">이메일:</strong> ceo@82studio.xyz</p>
               </div>
             </section>
           </div>

@@ -265,7 +265,7 @@ export default function TermsPage() {
               </p>
               <div className="text-[#8a8f98]">
                 <p><strong className="text-[#f7f8f8]">대표자:</strong> 박건우</p>
-                <p><strong className="text-[#f7f8f8]">이메일:</strong> itstime2make@gmail.com</p>
+                <p><strong className="text-[#f7f8f8]">이메일:</strong> ceo@82studio.xyz</p>
               </div>
             </section>
           </div>

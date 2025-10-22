@@ -85,7 +85,7 @@ export default function LandingPage() {
             <div>
               <h4 className="mb-4 text-[13px] font-medium text-[#d0d6e0]">연락처</h4>
               <ul className="space-y-2 text-[13px] text-[#8a8f98]">
-                <li>itstime2make@gmail.com</li>
+                <li>ceo@82studio.xyz</li>
               </ul>
             </div>
           </div>
