@@ -11,11 +11,15 @@ function buildSubscriptionData(
   const subData = subscription || data.subscription
   const product = data.product
 
+  console.log('[buildSubscriptionData] subData:', JSON.stringify(subData, null, 2))
+  console.log('[buildSubscriptionData] product:', JSON.stringify(product, null, 2))
+
   if (!subData) {
+    console.error('[buildSubscriptionData] No subscription data found!')
     return {}
   }
 
-  return {
+  const result = {
     id: subData.id,
     status: subData.status,
     product_id: product?.id,
@@ -27,6 +31,10 @@ function buildSubscriptionData(
     canceled_at: subData.canceled_at,
     trial_end: subData.trial_end,
   }
+
+  console.log('[buildSubscriptionData] Built subscription data:', JSON.stringify(result, null, 2))
+
+  return result
 }
 
 export async function POST(request: NextRequest) {
@@ -74,7 +82,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    console.log(`[Webhook] Processing event: ${eventType} for user: ${userId}`)
+    console.log(`[Creem Webhook] Processing event: ${eventType} for user: ${userId}`)
+    console.log('[Creem Webhook] Full event data:', JSON.stringify(webhookData, null, 2))
+    console.log('[Creem Webhook] data.subscription:', JSON.stringify(data.subscription, null, 2))
+    console.log('[Creem Webhook] data.product:', JSON.stringify(data.product, null, 2))
+    console.log('[Creem Webhook] data.customer:', JSON.stringify(data.customer, null, 2))
 
     switch (eventType) {
       case 'checkout.completed':
