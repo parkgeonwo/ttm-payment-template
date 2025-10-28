@@ -8,28 +8,42 @@ function buildSubscriptionData(
   data: CreemWebhookEvent['object'],
   subscription?: CreemSubscription
 ): Partial<UserSubscription> {
-  const subData = subscription || data.subscription
   const product = data.product
 
-  console.log('[buildSubscriptionData] subData:', JSON.stringify(subData, null, 2))
+  console.log('[buildSubscriptionData] data:', JSON.stringify(data, null, 2))
   console.log('[buildSubscriptionData] product:', JSON.stringify(product, null, 2))
 
-  if (!subData) {
-    console.error('[buildSubscriptionData] No subscription data found!')
+  // Creem의 실제 데이터 구조에 맞춰 필드 매핑
+  // subscription 객체가 아닌 object 자체에 데이터가 있음
+  if (!data.id || !product) {
+    console.error('[buildSubscriptionData] Missing required data (id or product)!')
     return {}
   }
 
+  // billing_period 변환: "every-month" → "month", "every-year" → "year"
+  let interval: 'month' | 'year' = 'month'
+  if (product.billing_period) {
+    if (product.billing_period.includes('year')) {
+      interval = 'year'
+    } else if (product.billing_period.includes('month')) {
+      interval = 'month'
+    }
+  }
+
   const result = {
-    id: subData.id,
-    status: subData.status,
-    product_id: product?.id,
-    product_name: product?.name,
-    amount: subData.amount,
-    interval: product?.interval,
-    current_period_start: subData.current_period_start,
-    current_period_end: subData.current_period_end,
-    canceled_at: subData.canceled_at,
-    trial_end: subData.trial_end,
+    id: data.id, // object.id가 subscription ID
+    status: data.status, // object.status
+    product_id: product.id,
+    product_name: product.name,
+    amount: product.price, // product.price (cents 단위)
+    currency: product.currency, // USD, KRW 등
+    interval: interval, // product.billing_period를 변환
+    current_period_start: data.current_period_start_date, // _date 접미사
+    current_period_end: data.current_period_end_date, // _date 접미사
+    next_transaction_date: data.next_transaction_date, // 다음 결제 예정일
+    last_transaction_date: data.last_transaction_date, // 마지막 결제일
+    canceled_at: data.canceled_at || undefined,
+    trial_end: undefined, // Creem 데이터에 trial_end 없음
   }
 
   console.log('[buildSubscriptionData] Built subscription data:', JSON.stringify(result, null, 2))
@@ -90,6 +104,7 @@ export async function POST(request: NextRequest) {
 
     switch (eventType) {
       case 'checkout.completed':
+        // Legacy support: 이전 Creem API 버전
         if (data.subscription) {
           await updateUserSubscription(
             userId,
@@ -102,10 +117,17 @@ export async function POST(request: NextRequest) {
         }
         break
 
+      case 'subscription.active':
       case 'subscription.created':
       case 'subscription.paid':
       case 'subscription.updated':
+        // 구독 정보 업데이트
         await updateUserSubscription(userId, buildSubscriptionData(data))
+
+        // customer_id 저장 (처음 한 번만)
+        if (data.customer?.id) {
+          await updateCustomerId(userId, data.customer.id)
+        }
         break
 
       case 'subscription.past_due':

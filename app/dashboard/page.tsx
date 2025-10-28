@@ -110,26 +110,41 @@ export default function DashboardPage() {
                     className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                       subscription.status === 'active'
                         ? 'bg-green-100 text-green-800'
-                        : subscription.status === 'past_due'
-                          ? 'bg-yellow-100 text-yellow-800'
-                          : 'bg-gray-100 text-gray-800'
+                        : subscription.status === 'trialing'
+                          ? 'bg-blue-100 text-blue-800'
+                          : subscription.status === 'past_due' ||
+                              subscription.status === 'unpaid'
+                            ? 'bg-yellow-100 text-yellow-800'
+                            : subscription.status === 'paused'
+                              ? 'bg-orange-100 text-orange-800'
+                              : 'bg-gray-100 text-gray-800'
                     }`}
                   >
                     {subscription.status === 'active'
                       ? '활성'
-                      : subscription.status === 'past_due'
-                        ? '결제 지연'
-                        : subscription.status === 'canceled'
-                          ? '취소됨'
-                          : subscription.status}
+                      : subscription.status === 'trialing'
+                        ? '체험 중'
+                        : subscription.status === 'past_due'
+                          ? '결제 지연'
+                          : subscription.status === 'unpaid'
+                            ? '미결제'
+                            : subscription.status === 'paused'
+                              ? '일시정지'
+                              : subscription.status === 'canceled'
+                                ? '취소됨'
+                                : subscription.status}
                   </span>
                 </div>
                 {subscription.amount && (
                   <div>
                     <p className="text-sm text-gray-600">요금</p>
                     <p className="text-gray-900">
-                      ₩{subscription.amount.toLocaleString()} /{' '}
-                      {subscription.interval === 'year' ? '년' : '월'}
+                      {subscription.currency === 'USD'
+                        ? `$${(subscription.amount / 100).toFixed(2)}`
+                        : subscription.currency === 'KRW'
+                          ? `₩${subscription.amount.toLocaleString()}`
+                          : `${subscription.amount.toLocaleString()} ${subscription.currency}`}{' '}
+                      / {subscription.interval === 'year' ? '년' : '월'}
                     </p>
                   </div>
                 )}
